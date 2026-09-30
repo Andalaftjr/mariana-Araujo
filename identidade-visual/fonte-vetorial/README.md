@@ -2,7 +2,7 @@
 
 Código que constrói todos os logotipos de `../final` e `../exploracao`.
 Os símbolos são desenhados com círculos, tangentes e retas; o nome é convertido
-em curvas a partir da fonte (Plus Jakarta Sans na r1; Outfit, Manrope e Fraunces nas explorações). O resultado são SVG e PDF
+em curvas a partir da fonte (Fraunces na direção Dobra; Plus Jakarta Sans, Outfit e Manrope nas anteriores). O resultado são SVG e PDF
 só com contornos preenchidos, sem traço e sem fonte embutida.
 
 | Arquivo | O que faz |
@@ -16,7 +16,11 @@ só com contornos preenchidos, sem traço e sem fonte embutida.
 | `typo.py` | Wordmark “Coleira & Passaporte” com o & próprio da marca |
 | `lockups.py` | Paletas e montagem das assinaturas (horizontal, vertical, empilhada, selo) |
 | `svgout.py` | Versões de cor (cor, negativo, preto, branco, cinza, uma cor) e escrita do SVG |
-| `export.py` | Gera `final/` (r2) e `exploracao/` (r0) e a lista de renderização |
+| `dobra.py` | O símbolo da direção Dobra: rosto, orelhas (cão, gato, coelho) e faceta |
+| `d.py` | Assinaturas, selo, elementos de apoio e versões de cor da Dobra; lista de peças |
+| `alternativas.py` | Estudos da rodada 3 (Janela e Retrato) |
+| `export_d.py` | Gera `final/` (Dobra) e `exploracao/rodada-3/` e a lista de renderização |
+| `export.py` | Regera a direção Elo r2 (em `../historico/elo-r2`, sem tocar em `final/`) e `exploracao/` (A, B, C r0) |
 | `render.js` | Renderiza PNG transparente e PDF vetorial com Chromium (Playwright) |
 
 ## Regerar os arquivos
@@ -24,9 +28,9 @@ só com contornos preenchidos, sem traço e sem fonte embutida.
 ```bash
 pip install fonttools brotli uharfbuzz skia-pathops
 mkdir -p fonts && cd fonts
-for f in plus-jakarta-sans outfit manrope fraunces; do npm pack @fontsource/$f && mkdir -p $f && tar xzf fontsource-$f-*.tgz -C $f; done
+for f in fraunces plus-jakarta-sans outfit manrope; do npm pack @fontsource/$f && mkdir -p $f && tar xzf fontsource-$f-*.tgz -C $f; done
 cd ..
-python3 export.py            # escreve SVG em ../final e ../exploracao
+python3 export_d.py          # escreve SVG em ../final e ../exploracao/rodada-3
 node render.js export_jobs.json   # PNG + PDF (precisa do pacote playwright)
 ```
 

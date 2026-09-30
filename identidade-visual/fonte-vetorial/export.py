@@ -65,7 +65,7 @@ def square_r2(bg, fg, acc, small, fill, medium=False):
 
 
 def main():
-    F = "final"
+    F = "historico/elo-r2"  # a direção atual (Dobra) é gerada por export_d.py
     # r2 da direção C (Elo): 10 peças x 6 versões de cor + elementos de apoio
     for name, builder, margin, png_w, _ in r2.PIECES:
         export_lockup(F, name, builder, margin, png_w)
