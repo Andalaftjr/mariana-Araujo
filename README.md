@@ -6,3 +6,10 @@ Identidade visual da Coleira & Passaporte, consultoria em Pet Travel.
 - Apresentação: [`identidade-visual/apresentacao/`](identidade-visual/apresentacao)
 
 ![Coleira & Passaporte](identidade-visual/final/png/cp-logo-principal-horizontal_cor.png)
+
+## Imigrapet · rodada 2
+
+Para a marca **Imigrapet** (slogan "de coleira e passaporte"), há dois conceitos novos em [`imigrapet/`](imigrapet): **Guia** (o laço) e **Salvo-conduto** (a credencial), com estratégia, pranchas, vetores-base, prompts do Higgsfield e recomendação.
+
+- Documento: [`imigrapet/README.md`](imigrapet/README.md)
+- Apresentação: [`imigrapet/apresentacao.html`](imigrapet/apresentacao.html)
