@@ -13,3 +13,4 @@ Para a marca **Imigrapet** (slogan "de coleira e passaporte"), há dois conceito
 
 - Documento: [`imigrapet/README.md`](imigrapet/README.md)
 - Apresentação: [`imigrapet/apresentacao.html`](imigrapet/apresentacao.html)
+- Rodada 3 (três ideias novas: Mudança, Focinho e Chegada): [`imigrapet/rodada-3/`](imigrapet/rodada-3)

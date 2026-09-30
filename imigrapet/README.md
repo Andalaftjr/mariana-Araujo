@@ -8,6 +8,7 @@
 imigrapet/
 ├── README.md                     ← este documento
 ├── apresentacao.html             ← apresentação completa para a cliente (abrir no navegador)
+├── rodada-3/                     ← três ideias novas: Mudança, Focinho e Chegada (ver rodada-3/README.md)
 ├── higgsfield/prompts.md         ← prompts finais, IDs dos jobs e links das imagens geradas
 ├── pranchas/                     ← pranchas de apresentação e de construção (PNG, renderizadas do vetor)
 │   ├── prancha-guia.png
