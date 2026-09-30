@@ -13,6 +13,7 @@ from lockups import (PALETTES, badge_layers, ink_bounds, lock_badge, lock_horizo
                      lock_symbol, lock_vertical, lock_wordmark)
 from svgout import colorway, svg_string
 from sym import sym_amp, sym_amp_small
+import r2
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WAYS = ["cor", "negativo", "preto", "branco", "cinza", "uma-cor"]
@@ -58,34 +59,33 @@ def square_symbol(fn, bg, fg, acc, fill=0.66, size=100):
     return svg_string(out, {"a": fg, "b": acc}, vb=(0, 0, size, size), bg=bg)
 
 
+def square_r2(bg, fg, acc, small, fill, medium=False):
+    lay = [(p, r) for p, r in r2.badge(50, 50, 100, small=small, fill=fill, medium=medium) if r != "badge"]
+    return svg_string(lay, {"badge_fg": fg, "badge_acc": acc}, vb=(0, 0, 100, 100), bg=bg)
+
+
 def main():
     F = "final"
-    # 1. principal: selo + nome + descritor (horizontal)
-    export_lockup(F, "cp-logo-principal-horizontal", lambda ko: lock_horizontal("C", True, knockout=ko), 18, 3000)
-    # 2. horizontal assinatura: nome em linha (o & do nome é o símbolo)
-    export_lockup(F, "cp-logo-horizontal-assinatura", lambda ko: lock_wordmark("C"), 18, 3000)
-    # 3. vertical: selo sobre nome + descritor
-    export_lockup(F, "cp-logo-vertical", lambda ko: lock_vertical("C", True, knockout=ko), 20, 2400)
-    # 4. empilhada: Coleira / & / Passaporte
-    export_lockup(F, "cp-logo-empilhado", lambda ko: lock_stacked("C", True), 20, 2000)
-    # 5. símbolo isolado (& livre) e selo
-    export_lockup(F, "cp-simbolo", lambda ko: lock_symbol("C"), 5, 2048)
-    export_lockup(F, "cp-selo", lambda ko: lock_badge(ko), 2, 2048)
+    # r2 da direção C (Elo): 10 peças x 6 versões de cor + elementos de apoio
+    for name, builder, margin, png_w, _ in r2.PIECES:
+        export_lockup(F, name, builder, margin, png_w)
+    for name, builder, margin, png_w, _ in r2.SUPPORT:
+        export_lockup(F + "/elementos", name, builder, margin, png_w, ways=["cor", "negativo", "preto", "branco"])
 
-    # avatares (quadrados, com fundo) + favicon
+    # avatares (quadrados, com fundo): o & coleira em versão média (sem os respiros do nó)
     P = {n: h for n, h, _ in PALETTES["C"]}
     navy, terra, linen = P["Azul Passaporte"], P["Terracota Tag"], P["Linho"]
     av = {
-        "cp-avatar_azul": square_symbol(sym_amp_small, navy, linen, terra, 0.58),
-        "cp-avatar_linho": square_symbol(sym_amp_small, linen, navy, terra, 0.58),
+        "cp-avatar_azul": square_r2(navy, linen, terra, False, 0.62, medium=True),
+        "cp-avatar_linho": square_r2(linen, navy, terra, False, 0.62, medium=True),
     }
     for n, s in av.items():
         sp = write(f"{F}/avatar/{n}.svg", s)
         for px in (1080, 640):
             jobs.append({"svg": sp, "png": os.path.join(OUT, f"{F}/avatar/{n}_{px}.png"), "width": px})
         index[n] = s
-    fav = square_symbol(sym_amp_small, navy, linen, terra, 0.7)
-    # rounded-square favicon
+    # favicon: versão reduzida (sem entrelace), quadrado arredondado
+    fav = square_r2(navy, linen, terra, True, 0.74)
     fav = fav.replace('<rect x="0.00" y="0.00" width="100.00" height="100.00"', '<rect x="0" y="0" width="100" height="100" rx="22"')
     sp = write(f"{F}/favicon/favicon.svg", fav)
     for px, n in ((16, "favicon-16"), (32, "favicon-32"), (48, "favicon-48"), (180, "apple-touch-icon-180"),
