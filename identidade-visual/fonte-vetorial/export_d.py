@@ -1,4 +1,4 @@
-"""Export direction D · Dobra (final kit) + the round-3 alternates.
+"""Export direction D · Dobra (now history: historico/dobra) + the round-3 alternates.
 
 Writes outlined SVG, transparent PNG and vector PDF into ../identidade-visual.
 """
@@ -48,7 +48,7 @@ def square(bg, fg, facet_c, acc, fill, facet=True, rx=None):
 
 
 def main():
-    F = "final"
+    F = "historico/dobra"
     for name, builder, margin, png_w, _ in d.PIECES:
         export(F, name, builder, margin, png_w)
     for name, builder, margin, png_w, _ in d.SUPPORT:

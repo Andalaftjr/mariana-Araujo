@@ -1,8 +1,8 @@
 # Fonte vetorial
 
 Código que constrói todos os logotipos de `../final` e `../exploracao`.
-Os símbolos são desenhados com círculos, tangentes e retas; o nome é convertido
-em curvas a partir da fonte (Fraunces na direção Dobra; Plus Jakarta Sans, Outfit e Manrope nas anteriores). O resultado são SVG e PDF
+Os símbolos são desenhados com círculos, tangentes, retas e curvas; o nome é convertido
+em curvas a partir da fonte (Fraunces nas direções Companheiros de viagem e Dobra; Plus Jakarta Sans, Outfit e Manrope nas anteriores). Na direção atual, os pets são desenhados em curvas de Bézier, à mão, no código. O resultado são SVG e PDF
 só com contornos preenchidos, sem traço e sem fonte embutida.
 
 | Arquivo | O que faz |
@@ -16,22 +16,27 @@ só com contornos preenchidos, sem traço e sem fonte embutida.
 | `typo.py` | Wordmark “Coleira & Passaporte” com o & próprio da marca |
 | `lockups.py` | Paletas e montagem das assinaturas (horizontal, vertical, empilhada, selo) |
 | `svgout.py` | Versões de cor (cor, negativo, preto, branco, cinza, uma cor) e escrita do SVG |
+| `pets.py`, `pets3.py`, `pets4.py` | Os perfis do cão e do gato (curvas), o respiro entre eles e utilitários de desenho |
+| `emb.py` | O emblema da direção atual: coleira (alça, costura, furos, argola, plaquinha), pets, rota e avião; versões simplificada e ícone |
+| `e.py` | Assinaturas, selo com o nome em arco, elementos de apoio, versões de cor e lista de peças da direção atual |
+| `export_e.py` | Gera `final/` (direção atual): peças, elementos, avatar, favicon e a lista de renderização |
 | `dobra.py` | O símbolo da direção Dobra: rosto, orelhas (cão, gato, coelho) e faceta |
 | `d.py` | Assinaturas, selo, elementos de apoio e versões de cor da Dobra; lista de peças |
 | `alternativas.py` | Estudos da rodada 3 (Janela e Retrato) |
-| `export_d.py` | Gera `final/` (Dobra) e `exploracao/rodada-3/` e a lista de renderização |
+| `export_d.py` | Regera a Dobra (em `../historico/dobra`, sem tocar em `final/`) e `exploracao/rodada-3/` |
 | `export.py` | Regera a direção Elo r2 (em `../historico/elo-r2`, sem tocar em `final/`) e `exploracao/` (A, B, C r0) |
 | `render.js` | Renderiza PNG transparente e PDF vetorial com Chromium (Playwright) |
 
 ## Regerar os arquivos
 
 ```bash
-pip install fonttools brotli uharfbuzz skia-pathops
+pip install fonttools brotli uharfbuzz skia-pathops pillow
 mkdir -p fonts && cd fonts
 for f in fraunces plus-jakarta-sans outfit manrope; do npm pack @fontsource/$f && mkdir -p $f && tar xzf fontsource-$f-*.tgz -C $f; done
 cd ..
-python3 export_d.py          # escreve SVG em ../final e ../exploracao/rodada-3
-node render.js export_jobs.json   # PNG + PDF (precisa do pacote playwright)
+FONTS_DIR=$PWD/fonts python3 export_e.py   # escreve SVG em ../final
+node render.js export_jobs.json             # PNG + PDF (precisa do pacote playwright)
+FONTS_DIR=$PWD/fonts python3 export_e.py .. ico   # favicon.ico a partir dos PNG
 ```
 
 As fontes são licenciadas sob a SIL Open Font License.
