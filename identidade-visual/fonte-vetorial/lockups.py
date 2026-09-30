@@ -13,7 +13,7 @@ import sys
 sys.path.insert(0, __file__.rsplit("/", 1)[0])
 from geo import *  # noqa
 from sym import AMP, amp_centerline, sym_amp, sym_strap, sym_tag, sym_tag_small
-from typo import FULL_NAME, custom_amp, font, stem, wordmark
+from typo import FULL_NAME, custom_amp, font, stem_bounds as stem, wordmark
 
 DESCRIPTOR = "CONSULTORIA EM PET TRAVEL"
 

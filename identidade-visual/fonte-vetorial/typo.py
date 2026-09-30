@@ -20,7 +20,16 @@ def font(name, weight, style="normal"):
 
 
 def stem(fnt):
-    """Vertical stem thickness of 'l' in em units."""
+    """Vertical stem thickness in em units: width of 'l' sliced at half x-height."""
+    p, _ = fnt.text("l", 1000)
+    y = -fnt.xh / fnt.upem * 1000 / 2
+    sl = inter(p, rect(-1000, y - 1, 3000, 2))
+    b = sl.bounds
+    return (b[2] - b[0]) / 1000.0
+
+
+def stem_bounds(fnt):
+    """r0 measure (bounds of 'l'); kept so the r0 files regenerate identically."""
     p, _ = fnt.text("l", 1000)
     b = p.bounds
     return (b[2] - b[0]) / 1000.0
@@ -59,7 +68,7 @@ def wordmark(fnt, size, amp="custom", tracking=0.0, amp_scale=1.0, space_scale=1
         p, w = fnt.text(FULL_NAME, size, 0, 0, tracking)
         return dict(text=p, amp=None, tag=None, width=w, cap=cap)
     pl, wl = fnt.text(NAME_L, size, 0, 0, tracking)
-    st = stem(fnt) * size * 0.92
+    st = stem_bounds(fnt) * size * 0.92
     a_line, a_tag, aw = custom_amp(wl + sp, 0, cap * amp_scale, st)
     xr = wl + sp + aw + sp
     pr, wr = fnt.text(NAME_R, size, xr, 0, tracking)

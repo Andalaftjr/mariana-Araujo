@@ -191,7 +191,7 @@ class Font:
         hb.shape(self.hbfont, buf, feats)
         sc = size / self.upem
         out = Path()
-        pen = out.getPen()
+        pen = pathops.PathPen(out, glyphSet=self.gs)  # decomposes composite glyphs
         cx = x
         n = len(buf.glyph_infos)
         for i, (info, pos) in enumerate(zip(buf.glyph_infos, buf.glyph_positions)):

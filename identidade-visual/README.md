@@ -1,60 +1,60 @@
 # Coleira & Passaporte · identidade visual
 
-Proposta v1 · 30/09/2026 · consultoria em Pet Travel
+Direção C · Elo · revisão r1 · 30/09/2026 · consultoria em Pet Travel
 
-Apresentação completa (três direções, recomendação, testes e regras):
-[`apresentacao/coleira-passaporte-identidade.html`](apresentacao/coleira-passaporte-identidade.html)
-(também em PNG e PDF na mesma pasta).
+A apresentação completa (evolução, construção, sistema, testes e regras) está em
+[`apresentacao/coleira-passaporte-identidade.html`](apresentacao/coleira-passaporte-identidade.html),
+com versões em PNG e PDF na mesma pasta.
 
-![Logo principal](final/png/cp-logo-principal-horizontal_cor.png)
+![Logo principal](final/png/cp-logo-principal_cor.png)
 
-## Direção recomendada: C · Elo
+## O símbolo: um & que é um nó
 
-O “&” do nome é o símbolo da marca, desenhado como um único traço contínuo, como uma guia:
+O “&” do nome é desenhado como uma guia de passeio: um traço contínuo que começa na
+coleira e termina na tag do animal. Na r1 esse traço passa por cima e por baixo de si
+mesmo, como um nó de verdade. É um laço que não desata, e por isso transmite segurança
+sem recorrer a cadeado ou escudo.
 
-1. **Laço superior:** a coleira.
-2. **Primeiro cruzamento:** a conexão entre tutor e animal.
-3. **Bojo:** o acolhimento.
-4. **Segundo cruzamento:** a escala da viagem.
-5. **Tag terracota:** identificação e destino.
+1. **Laço:** a coleira. Círculo de raio 14 no grid de 100.
+2. **Nó de cima:** a diagonal passa por cima.
+3. **Bojo:** o acolhimento. Círculo de raio 21.
+4. **Nó de baixo:** agora quem passa por cima é o braço. Essa alternância é o que faz dele um nó real.
+5. **Linha de base:** a cauda é cortada reta, alinhada ao fundo do bojo.
+6. **Tag terracota:** identificação e destino. Seu respiro recorta a ponta do braço.
 
-Um traço só, do começo ao fim, sem pontas soltas: é o que a consultoria promete.
+### O que mudou da r0 para a r1
 
-As outras duas direções estão em [`exploracao/`](exploracao):
-
-- **A · Tag de Embarque:** etiqueta de bagagem + argola + página de dados. É a mais clara, mas também a mais genérica.
-- **B · Rota da Coleira:** coleira estendida como estrada sinuosa. É a mais narrativa, porém pode ser lida como cinto ou cobra e é difícil de aplicar.
-
-| Critério | A | B | C |
-| --- | --- | --- | --- |
-| Diferenciação | 2 | 4 | 5 |
-| Legibilidade em tamanho pequeno | 5 | 3 | 4 |
-| Escalabilidade | 4 | 3 | 5 |
-| Aderência ao serviço | 5 | 4 | 3 |
-| Facilidade de aplicação | 4 | 2 | 5 |
-| **Total (de 25)** | **20** | **16** | **22** |
+- Traço 33% mais encorpado: passou de 8,4 para 11,2 no grid de 100.
+- Entrelaçado nos dois cruzamentos, formando o nó.
+- Pé reto na linha de base.
+- Tag encaixada na ponta do braço.
+- No logotipo, o & tem 1,32× a altura das maiúsculas: o símbolo vive dentro do nome.
+- Tipografia: Plus Jakarta Sans Bold no lugar de Outfit Medium.
+- A r0 continua no histórico do git (commit `58f7e5a`). As direções A, B e C (r0) estão em [`exploracao/`](exploracao).
 
 ## Arquivos (`final/`)
 
 | Peça | Arquivo base | Uso |
 | --- | --- | --- |
-| Logo principal | `cp-logo-principal-horizontal` | Selo + nome + descritor. Uso preferencial |
-| Horizontal (assinatura) | `cp-logo-horizontal-assinatura` | Nome em linha para cabeçalhos, documentos e rodapés |
+| Logo principal | `cp-logo-principal` | Nome com o & em destaque + descritor. Uso preferencial |
+| Horizontal com selo | `cp-logo-horizontal-selo` | Símbolo + nome completo: site, cabeçalhos, documentos |
+| Assinatura | `cp-logo-assinatura` | Nome em uma linha, sem descritor: rodapés e espaços estreitos |
 | Vertical | `cp-logo-vertical` | Selo sobre o nome |
 | Empilhada | `cp-logo-empilhado` | Coleira / & / Passaporte |
-| Símbolo | `cp-simbolo` | & livre para padrões, carimbos e grandes formatos |
-| Selo | `cp-selo` | & dentro do círculo; é a assinatura reduzida |
+| Símbolo | `cp-simbolo` | & com nó e tag: padrões, carimbo seco, grandes formatos |
+| Símbolo reduzido | `cp-simbolo-reduzido` | Sem os respiros do nó: até 24 px, e bordado ou gravação abaixo de 25 mm |
+| Selo | `cp-selo` | & no círculo; é a assinatura reduzida |
 
-Cada peça vem em `_cor`, `_negativo`, `_preto`, `_branco`, `_cinza` e `_uma-cor`, nos formatos:
+Cada peça vem em seis versões (`_cor`, `_negativo`, `_preto`, `_branco`, `_cinza` e `_uma-cor`) e em três formatos:
 
-- `svg/`: vetor, nome em curvas, fundo transparente.
+- `svg/`: vetor, com o nome em curvas e fundo transparente.
 - `pdf/`: vetor para gráfica, sem imagem embutida.
-- `png/`: fundo transparente, 2000 a 3000 px.
+- `png/`: fundo transparente, de 1000 a 3000 px.
 
-Há ainda:
+Além disso:
 
-- `avatar/`: quadrados com fundo (azul e linho), SVG e PNG em 1080 e 640 px.
-- `favicon/`: `favicon.svg`, `favicon.ico` e PNG em 16, 32, 48, 180, 192 e 512 px.
+- `avatar/`: quadrados com fundo (azul e linho), com o & com nó, em SVG e em PNG de 1080 e 640 px.
+- `favicon/`: `favicon.svg`, `favicon.ico` e PNG de 16, 32, 48, 180, 192 e 512 px, feitos com a versão reduzida.
 
 ## Paleta
 
@@ -66,15 +66,23 @@ Há ainda:
 | Céu de Cabine | `#A9BCCB` | 169, 188, 203 | 17 / 7 / 0 / 20 | Apoio: tranquilidade e mobilidade |
 | Tinta | `#111A2B` | 17, 26, 43 | 60 / 40 / 0 / 83 | Texto corrido e versão escura profunda |
 
-\* O CMYK vem de conversão matemática, sem perfil ICC. É um ponto de partida: confirme com prova de impressão no perfil da gráfica (ex.: ISO Coated v2 / FOGRA39) e escolha o Pantone no guia físico.
+\* O CMYK vem de uma conversão matemática, sem perfil ICC. Confirme com prova de impressão no perfil da gráfica (ex.: ISO Coated v2 / FOGRA39) e escolha o Pantone no guia físico.
 
-Contrastes: Azul sobre Linho tem 12,4:1 e Terracota sobre Linho tem 3,3:1. Terracota sobre Azul tem 3,8:1, então use só em elementos gráficos e títulos grandes, nunca em texto pequeno.
+Contrastes:
+
+- Azul sobre Linho: 12,4:1.
+- Terracota sobre Linho: 3,3:1.
+- Terracota sobre Azul: 3,8:1. Use só em elementos gráficos e títulos grandes, nunca em texto pequeno.
 
 ## Tipografia
 
-- **Outfit** (Google Fonts, SIL OFL): nome, títulos e texto. Medium 500 no nome e nos títulos; Regular 400 no texto; descritor em caixa alta com +200 de espaçamento.
+- **Plus Jakarta Sans** (Google Fonts, SIL OFL): nome, títulos e texto.
+  - Bold 700 no nome.
+  - SemiBold 600 nos títulos e no descritor (caixa alta, +220 de espaçamento).
+  - Regular 400 no texto.
 - **IBM Plex Mono** (Google Fonts, SIL OFL): dados como datas, códigos de voo, referências e checklists.
-- No logo, o nome já está em curvas e o “&” é o desenho próprio da marca. Não redigite o logo com a fonte.
+
+No logo, o nome já está em curvas e o “&” é o desenho próprio da marca, não o da fonte. Não redigite o logo.
 
 ## Regras básicas
 
@@ -84,30 +92,31 @@ Contrastes: Azul sobre Linho tem 12,4:1 e Terracota sobre Linho tem 3,3:1. Terra
   | Peça | Tela | Impressão |
   | --- | --- | --- |
   | Logo principal | 140 px | 40 mm |
+  | Horizontal com selo | 150 px | 42 mm |
   | Assinatura | 110 px | 30 mm |
   | Vertical / empilhada | 90 px | 25 mm |
-  | Selo / símbolo | 16 px | 6 mm (bordado: 10 mm) |
+  | Símbolo / selo com nó | 32 px | 10 mm |
+  | Versão reduzida | 16 px | 5 mm |
 
-- Abaixo de 32 px, use a versão reduzida do & (traço mais grosso). O favicon e os avatares já usam essa versão.
+- Até 24 px, e em bordado ou gravação abaixo de 25 mm, use a versão reduzida.
+- Não preencha os respiros do nó em tamanhos grandes.
 - Com o nome ao lado, use o **selo**. O & livre colado ao nome seria lido como “& Coleira & Passaporte”.
-- Nunca escreva “Coleira e Passaporte”, “Coleira + Passaporte” ou outra variação.
+- Nunca escreva “Coleira e Passaporte”, “Coleira + Passaporte” ou outra variação, nem monte o logo com o & da fonte.
 - Não distorça, não gire, não troque cores e não aplique sombra, degradê, contorno ou 3D.
-- Sobre fotografia: use a versão negativa numa área escura e calma. Se a foto for clara ou movimentada, use uma faixa sólida de Azul Passaporte.
+- Sobre fotografia, use a versão negativa numa área escura e calma. Se a foto for clara ou movimentada, use uma faixa sólida de Azul Passaporte.
 
 ## Processo e status
 
-- **Estudos no Higgsfield:** fiz três estudos, um por direção, com o modelo Nano Banana 2 (4,5 créditos), no projeto “Coleira & Passaporte — Identidade Visual”. O modelo vetorial Recraft exige plano pago. A rede do ambiente de trabalho bloqueou o servidor de imagens do Higgsfield, então não consegui ver os estudos nem trazê-los para este repositório. Eles continuam disponíveis no projeto.
-- **Vetores:** construídos geometricamente em código (ver [`fonte-vetorial/`](fonte-vetorial)), sem rastreamento de imagem de IA. O nome foi convertido em curvas a partir da fonte, com a grafia exata “Coleira & Passaporte”.
-- **Revisão recomendada antes do registro:** um designer deve fazer o ajuste fino de espaçamento entre letras, preparar as junções do & para bordado e gravação e rodar uma prova de cor impressa.
+- **Estudos no Higgsfield (r0):** três estudos com Nano Banana 2, no projeto “Coleira & Passaporte — Identidade Visual”. A rede do ambiente bloqueou o servidor de imagens, então não consegui vê-los. Na r1 não houve geração por IA: os créditos estavam zerados, e a evolução foi desenhada direto em vetor.
+- **Vetores:** construídos geometricamente em código, sem rastreamento de imagem de IA (ver [`fonte-vetorial/`](fonte-vetorial)). O nome está em curvas a partir da fonte, com a grafia exata “Coleira & Passaporte”.
+- **Revisão recomendada antes do registro:** ajuste fino de espaçamento entre letras, junções do nó para bordado e gravação, e prova de cor impressa.
 
 ## Antes de usar comercialmente
 
 Esta proposta **não declara a marca juridicamente disponível**. Ainda é preciso verificar:
 
 - **INPI:** busca de anterioridade da marca nominativa e mista. A classe 39 é um ponto de partida; confirme as demais com um especialista.
-- **Domínio:** o “&” não é aceito em endereços, então será preciso escolher uma grafia técnica sem mudar o nome da marca.
+- **Domínio:** o “&” não é aceito em endereços, então será preciso uma grafia técnica, sem mudar o nome da marca.
 - **Redes sociais:** disponibilidade dos perfis.
 
-Os contatos e @ que aparecem nos mockups são fictícios.
-
-A foto usada no teste “sobre fotografia” é “Chelsea the cat”, de Stefan van der Walt, CC0 (banco de imagens do scikit-image).
+Os contatos e @ dos mockups são fictícios. A foto do teste “sobre fotografia” é “Chelsea the cat”, de Stefan van der Walt, CC0 (banco de imagens do scikit-image).
