@@ -10,11 +10,13 @@ só com contornos preenchidos, sem traço e sem fonte embutida.
 | `geo.py` | Primitivas (círculo, polígono arredondado, tangentes entre círculos), booleanas e conversão de texto em curvas |
 | `sym.py` | Símbolos das três direções (r0); `AMP` guarda a geometria do & da r0 |
 | `amp_r1.py` | O & da r1: nó entrelaçado, pé reto, tag encaixada e versão reduzida (`R1`, `R1_SMALL`) |
-| `r1.py` | Logotipo e assinaturas da r1 (Plus Jakarta Sans + &) e a lista de peças exportadas |
+| `r1.py` | Logotipo e assinaturas da r1 (Plus Jakarta Sans + &) |
+| `amp_r2.py` | O & da r2 desenhado como coleira: fivela, argola, plaquinha, furos; `R2`, `R2_TEXT` (médio), `R2_SMALL` (reduzido) |
+| `r2.py` | Logotipo, assinaturas, elementos de apoio (faixa-coleira, plaquinha) e a lista de peças exportadas |
 | `typo.py` | Wordmark “Coleira & Passaporte” com o & próprio da marca |
 | `lockups.py` | Paletas e montagem das assinaturas (horizontal, vertical, empilhada, selo) |
 | `svgout.py` | Versões de cor (cor, negativo, preto, branco, cinza, uma cor) e escrita do SVG |
-| `export.py` | Gera `final/` (r1) e `exploracao/` (r0) e a lista de renderização |
+| `export.py` | Gera `final/` (r2) e `exploracao/` (r0) e a lista de renderização |
 | `render.js` | Renderiza PNG transparente e PDF vetorial com Chromium (Playwright) |
 
 ## Regerar os arquivos

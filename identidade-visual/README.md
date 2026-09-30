@@ -1,6 +1,6 @@
 # Coleira & Passaporte · identidade visual
 
-Direção C · Elo · revisão r1 · 30/09/2026 · consultoria em Pet Travel
+Direção C · Elo · revisão r2 · 30/09/2026 · consultoria em Pet Travel
 
 A apresentação completa (evolução, construção, sistema, testes e regras) está em
 [`apresentacao/coleira-passaporte-identidade.html`](apresentacao/coleira-passaporte-identidade.html),
@@ -8,41 +8,47 @@ com versões em PNG e PDF na mesma pasta.
 
 ![Logo principal](final/png/cp-logo-principal_cor.png)
 
-## O símbolo: um & que é um nó
+## O símbolo: o & é uma coleira
 
-O “&” do nome é desenhado como uma guia de passeio: um traço contínuo que começa na
-coleira e termina na tag do animal. Na r1 esse traço passa por cima e por baixo de si
-mesmo, como um nó de verdade. É um laço que não desata, e por isso transmite segurança
-sem recorrer a cadeado ou escudo.
+O “&” do nome é desenhado como uma coleira de pet. Qualquer tutor reconhece os detalhes:
 
-1. **Laço:** a coleira. Círculo de raio 14 no grid de 100.
-2. **Nó de cima:** a diagonal passa por cima.
-3. **Bojo:** o acolhimento. Círculo de raio 21.
-4. **Nó de baixo:** agora quem passa por cima é o braço. Essa alternância é o que faz dele um nó real.
-5. **Linha de base:** a cauda é cortada reta, alinhada ao fundo do bojo.
-6. **Tag terracota:** identificação e destino. Seu respiro recorta a ponta do braço.
+1. **Laço = a coleira.** Círculo de raio 17 no grid de 100.
+2. **Fivela** na lateral do laço, com a tira passando por dentro.
+3. **Argola e plaquinha:** a plaquinha terracota pende de uma argola presa ao laço.
+4. **Nó de cima:** a diagonal passa por cima (vem da r1).
+5. **Bojo:** círculo de raio 21.
+6. **Nó de baixo:** o braço passa por cima. Com essa alternância, vira um nó de verdade.
+7. **Ponta da tira:** a cauda do &, arredondada e com três furos.
 
-### O que mudou da r0 para a r1
+### Evolução
 
-- Traço 33% mais encorpado: passou de 8,4 para 11,2 no grid de 100.
-- Entrelaçado nos dois cruzamentos, formando o nó.
-- Pé reto na linha de base.
-- Tag encaixada na ponta do braço.
-- No logotipo, o & tem 1,32× a altura das maiúsculas: o símbolo vive dentro do nome.
-- Tipografia: Plus Jakarta Sans Bold no lugar de Outfit Medium.
-- A r0 continua no histórico do git (commit `58f7e5a`). As direções A, B e C (r0) estão em [`exploracao/`](exploracao).
+- **r0 (esboço):** & monolinha com um ponto terracota.
+- **r1 (nó):** traço mais grosso, entrelaçado nos cruzamentos, e Plus Jakarta Sans no nome.
+- **r2 (coleira):** fivela, argola com plaquinha pendurada no laço e ponta furada. Os elementos de apoio são novos: a faixa-coleira e as plaquinhas numeradas.
+
+As versões anteriores estão no histórico do git (commits `58f7e5a` e `d6bf88c`). As direções A, B e C (r0) estão em [`exploracao/`](exploracao).
+
+### Três níveis de detalhe (o mesmo desenho)
+
+| Nível | Quando usar | O que tem |
+| --- | --- | --- |
+| Completo (`cp-simbolo`) | a partir de 64 px e 20 mm | tudo, incluindo os respiros do nó |
+| Médio (`cp-simbolo-medio`) | de 32 a 64 px, avatar e dentro do nome | fivela, argola, plaquinha e furos, sem os respiros do nó |
+| Reduzido (`cp-simbolo-reduzido`) | até 32 px, favicon e bordado até 25 mm | laço, argola e plaquinha |
 
 ## Arquivos (`final/`)
 
 | Peça | Arquivo base | Uso |
 | --- | --- | --- |
-| Logo principal | `cp-logo-principal` | Nome com o & em destaque + descritor. Uso preferencial |
+| Logo principal | `cp-logo-principal` | Nome com o & coleira em destaque + descritor. Uso preferencial (a partir de 300 px) |
 | Horizontal com selo | `cp-logo-horizontal-selo` | Símbolo + nome completo: site, cabeçalhos, documentos |
-| Assinatura | `cp-logo-assinatura` | Nome em uma linha, sem descritor: rodapés e espaços estreitos |
+| Assinatura | `cp-logo-assinatura` | Nome em uma linha, sem descritor |
+| Assinatura reduzida | `cp-logo-assinatura-reduzida` | Nome com o & reduzido, para menos de 300 px |
 | Vertical | `cp-logo-vertical` | Selo sobre o nome |
 | Empilhada | `cp-logo-empilhado` | Coleira / & / Passaporte |
-| Símbolo | `cp-simbolo` | & com nó e tag: padrões, carimbo seco, grandes formatos |
-| Símbolo reduzido | `cp-simbolo-reduzido` | Sem os respiros do nó: até 24 px, e bordado ou gravação abaixo de 25 mm |
+| Símbolo completo | `cp-simbolo` | Grandes formatos, fachada, embalagem, carimbo seco |
+| Símbolo médio | `cp-simbolo-medio` | 32 a 64 px |
+| Símbolo reduzido | `cp-simbolo-reduzido` | Até 32 px e bordado pequeno |
 | Selo | `cp-selo` | & no círculo; é a assinatura reduzida |
 
 Cada peça vem em seis versões (`_cor`, `_negativo`, `_preto`, `_branco`, `_cinza` e `_uma-cor`) e em três formatos:
@@ -53,7 +59,8 @@ Cada peça vem em seis versões (`_cor`, `_negativo`, `_preto`, `_branco`, `_cin
 
 Além disso:
 
-- `avatar/`: quadrados com fundo (azul e linho), com o & com nó, em SVG e em PNG de 1080 e 640 px.
+- `elementos/`: faixa-coleira (curta e longa) e plaquinha, em cor, negativo, preto e branco.
+- `avatar/`: quadrados com fundo (azul e linho), com o símbolo médio, em SVG e em PNG de 1080 e 640 px.
 - `favicon/`: `favicon.svg`, `favicon.ico` e PNG de 16, 32, 48, 180, 192 e 512 px, feitos com a versão reduzida.
 
 ## Paleta
@@ -91,15 +98,15 @@ No logo, o nome já está em curvas e o “&” é o desenho próprio da marca, 
 
   | Peça | Tela | Impressão |
   | --- | --- | --- |
-  | Logo principal | 140 px | 40 mm |
-  | Horizontal com selo | 150 px | 42 mm |
-  | Assinatura | 110 px | 30 mm |
-  | Vertical / empilhada | 90 px | 25 mm |
-  | Símbolo / selo com nó | 32 px | 10 mm |
-  | Versão reduzida | 16 px | 5 mm |
+  | Logo principal / horizontal com selo | 300 px | 60 mm |
+  | Assinatura reduzida | 110 px | 30 mm |
+  | Vertical / empilhada | 160 px | 40 mm |
+  | Símbolo completo / selo | 64 px | 20 mm |
+  | Símbolo médio | 32 px | 10 mm |
+  | Símbolo reduzido | 16 px | 5 mm (bordado até 25 mm) |
 
-- Até 24 px, e em bordado ou gravação abaixo de 25 mm, use a versão reduzida.
-- Não preencha os respiros do nó em tamanhos grandes.
+- Escolha o nível de detalhe pelo tamanho. Não use o símbolo completo abaixo de 64 px.
+- A terracota fica na plaquinha e nas plaquinhas de apoio. Não troque a plaquinha por patinha, osso ou coração: a coleira já diz “pet”.
 - Com o nome ao lado, use o **selo**. O & livre colado ao nome seria lido como “& Coleira & Passaporte”.
 - Nunca escreva “Coleira e Passaporte”, “Coleira + Passaporte” ou outra variação, nem monte o logo com o & da fonte.
 - Não distorça, não gire, não troque cores e não aplique sombra, degradê, contorno ou 3D.
@@ -107,9 +114,9 @@ No logo, o nome já está em curvas e o “&” é o desenho próprio da marca, 
 
 ## Processo e status
 
-- **Estudos no Higgsfield (r0):** três estudos com Nano Banana 2, no projeto “Coleira & Passaporte — Identidade Visual”. A rede do ambiente bloqueou o servidor de imagens, então não consegui vê-los. Na r1 não houve geração por IA: os créditos estavam zerados, e a evolução foi desenhada direto em vetor.
+- **Estudos no Higgsfield (r0):** três estudos com Nano Banana 2, no projeto “Coleira & Passaporte — Identidade Visual”. A rede do ambiente bloqueou o servidor de imagens, então não consegui vê-los. Na r1 e na r2 não houve geração por IA: os créditos estavam zerados, e a evolução foi desenhada direto em vetor.
 - **Vetores:** construídos geometricamente em código, sem rastreamento de imagem de IA (ver [`fonte-vetorial/`](fonte-vetorial)). O nome está em curvas a partir da fonte, com a grafia exata “Coleira & Passaporte”.
-- **Revisão recomendada antes do registro:** ajuste fino de espaçamento entre letras, junções do nó para bordado e gravação, e prova de cor impressa.
+- **Revisão recomendada antes do registro:** ajuste fino de espaçamento entre letras, fivela e furos para bordado e gravação, e prova de cor impressa.
 
 ## Antes de usar comercialmente
 
