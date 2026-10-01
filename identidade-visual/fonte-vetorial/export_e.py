@@ -1,4 +1,4 @@
-"""Export direction E · Companheiros de viagem (final kit).
+"""Export direction E · Companheiros de viagem, round 1 (now history: historico/companheiros-r1).
 
 Writes outlined SVG, transparent PNG and vector PDF into ../identidade-visual.
 """
@@ -57,7 +57,7 @@ def favicon():
 
 
 def main():
-    F = "final"
+    F = "historico/companheiros-r1"
     for name, builder, margin, png_w, _ in e.PIECES:
         export(F, name, builder, margin, png_w)
     for name, builder, margin, png_w, _ in e.SUPPORT:

@@ -19,7 +19,10 @@ só com contornos preenchidos, sem traço e sem fonte embutida.
 | `pets.py`, `pets3.py`, `pets4.py` | Os perfis do cão e do gato (curvas), o respiro entre eles e utilitários de desenho |
 | `emb.py` | O emblema da direção atual: coleira (alça, costura, furos, argola, plaquinha), pets, rota e avião; versões simplificada e ícone |
 | `e.py` | Assinaturas, selo com o nome em arco, elementos de apoio, versões de cor e lista de peças da direção atual |
-| `export_e.py` | Gera `final/` (direção atual): peças, elementos, avatar, favicon e a lista de renderização |
+| `emb2.py` | O emblema da rodada 2 (atual): plaquinha presa na coleira, avião na alça, pets maiores |
+| `e2.py` | Assinaturas (com o novo logo compacto), selo, elementos, versões de cor e lista de peças da rodada 2 |
+| `export_e2.py` | Gera `final/` (rodada 2, atual): peças, elementos, avatar, favicon e a lista de renderização |
+| `export_e.py` | Regera a rodada 1 desta direção (em `../historico/companheiros-r1`, sem tocar em `final/`) |
 | `dobra.py` | O símbolo da direção Dobra: rosto, orelhas (cão, gato, coelho) e faceta |
 | `d.py` | Assinaturas, selo, elementos de apoio e versões de cor da Dobra; lista de peças |
 | `alternativas.py` | Estudos da rodada 3 (Janela e Retrato) |
@@ -34,9 +37,9 @@ pip install fonttools brotli uharfbuzz skia-pathops pillow
 mkdir -p fonts && cd fonts
 for f in fraunces plus-jakarta-sans outfit manrope; do npm pack @fontsource/$f && mkdir -p $f && tar xzf fontsource-$f-*.tgz -C $f; done
 cd ..
-FONTS_DIR=$PWD/fonts python3 export_e.py   # escreve SVG em ../final
+FONTS_DIR=$PWD/fonts python3 export_e2.py  # escreve SVG em ../final
 node render.js export_jobs.json             # PNG + PDF (precisa do pacote playwright)
-FONTS_DIR=$PWD/fonts python3 export_e.py .. ico   # favicon.ico a partir dos PNG
+FONTS_DIR=$PWD/fonts python3 export_e2.py .. ico  # favicon.ico a partir dos PNG
 ```
 
 As fontes são licenciadas sob a SIL Open Font License.
