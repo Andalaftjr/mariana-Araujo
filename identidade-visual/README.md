@@ -1,6 +1,6 @@
 # Coleira & Passaporte · identidade visual
 
-Direção E · Companheiros de viagem · 30/09/2026 · consultoria em Pet Travel
+Direção E · Companheiros de viagem, rodada 2 · 01/10/2026 · consultoria em Pet Travel
 
 A apresentação completa (conceito, construção, sistema, testes e regras) está em
 [`apresentacao/coleira-passaporte-identidade.html`](apresentacao/coleira-passaporte-identidade.html),
@@ -8,18 +8,32 @@ com versões em PNG e PDF na mesma pasta.
 
 ![Selo](final/png/cp-selo_cor.png)
 
-![Logo horizontal](final/png/cp-logo-horizontal_cor.png)
+![Logo compacto](final/png/cp-logo-compacto_cor.png)
 
 ## O conceito: o nome, desenhado
 
-- **Coleira:** é a moldura do emblema, com alça costurada, três furos de regulagem e argola.
-- **Passaporte:** é a plaquinha de identificação pendurada na argola. É o documento do pet: microchip, vacinas, certificados.
+- **Coleira:** é a moldura do emblema, com alça costurada e três furos de regulagem.
+- **Passaporte:** é a plaquinha de identificação, presa na borda de baixo da coleira, com o furo de identificação. É o documento do pet: microchip, vacinas, certificados.
 - **Companheiros:** um cão e um gato juntos, olhando para a frente, para onde vão. A marca atende as duas espécies.
-- **Viagem:** uma rota de voo tracejada cruza o céu da coleira e termina num avião pequeno.
+- **Viagem:** uma rota de voo tracejada cruza o céu da coleira, e o avião atravessa a alça: a viagem sai da moldura.
 
 **Selo:** o nome vai escrito na própria alça, como numa coleira personalizada: “Coleira & Passaporte” no alto e “Consultoria em Pet Travel” embaixo.
 
 **Tom:** o que separa a marca de um pet shop é a paleta sóbria, a serifada editorial e o desenho plano.
+
+### O que melhorou na rodada 2
+
+- **Quase redondo:** a plaquinha subiu para a borda da coleira, então o emblema cabe num círculo (avatar, adesivo, bordado).
+- **A viagem sai da moldura:** o avião agora cruza a alça, recortado do couro.
+- **Pets maiores:** no mesmo tamanho de emblema, cão e gato ficam 13% maiores.
+- **Logo compacto:** nova assinatura com o nome em duas linhas, “Coleira &” / “Passaporte”, 36% mais estreita que o horizontal na mesma altura.
+
+### Na disputa com Imigrapet e Tripulapet
+
+Na pesquisa de nomes, os três saíram verdes. A apresentação compara os três no mesmo teste (avatar e lista de conversas), com os símbolos de Imigrapet e Tripulapet como estão nas pranchas de cada um.
+
+- **Força:** a Coleira & Passaporte é a única que mostra cão e gato e conta o serviço inteiro. É também uma frase, longe dos compostos “pet + viagem” que deram conflito (Pet Travel, Passapet, PetPass, Viagem Pet) ou pedem atenção (Vet Travel, PetPorte).
+- **Ponto fraco:** o nome é o mais longo, com 20 caracteres. O logo compacto resolve o espaço. Para @ e domínio, será preciso uma grafia sem o “&”.
 
 ## Arquivos (`final/`)
 
@@ -27,6 +41,7 @@ com versões em PNG e PDF na mesma pasta.
 | --- | --- | --- |
 | Selo | `cp-selo` | O nome escrito na coleira. Assinatura principal: redes, adesivo, embalagem, carimbo, bordado |
 | Horizontal | `cp-logo-horizontal` | Emblema + nome + descritor: site, documentos, apresentações |
+| Compacto | `cp-logo-compacto` | Emblema + nome em duas linhas + descritor: cabeçalho de redes, cartão, espaços quadrados |
 | Assinatura | `cp-logo-assinatura` | Emblema simplificado + nome, sem descritor: menu, rodapé, e-mail |
 | Vertical | `cp-logo-vertical` | Emblema sobre o nome |
 | Nome | `cp-logo-nome` | Só o logotipo, quando o emblema já está na peça |
@@ -45,7 +60,7 @@ Nas versões de uma cor, o nome do selo fica vazado na alça, e o cão do ícone
 Pastas complementares:
 
 - `elementos/`: a rota de voo e a plaquinha, para compor peças.
-- `avatar/`: quadrados com fundo, em azul e em linho, em SVG e em PNG de 1080 e 640 px. A coleira fica dentro do recorte circular.
+- `avatar/`: quadrados com fundo, em azul e em linho, em SVG e em PNG de 1080 e 640 px. A coleira inteira fica dentro do recorte circular, com a plaquinha como aba.
 - `favicon/`: `favicon.svg`, `favicon.ico` e PNG de 16, 32, 48, 180, 192 e 512 px.
 
 ## Paleta
@@ -74,6 +89,7 @@ No logo e no selo, o nome já está em curvas. Não redigite o logo com a fonte.
 - **Qual peça usar:**
   - Selo: redes, adesivos, embalagens e carimbo.
   - Horizontal: site, documentos e apresentações.
+  - Compacto: cabeçalho de redes e cartão.
   - Assinatura: menu, rodapé e e-mail.
 - **Nível de detalhe:** abaixo de 64 px, use o emblema simplificado; abaixo de 32 px, o ícone.
 - **Tamanho mínimo:**
@@ -82,6 +98,7 @@ No logo e no selo, o nome já está em curvas. Não redigite o logo com a fonte.
   | --- | --- | --- |
   | Selo | 140 px | 30 mm |
   | Horizontal | 180 px | 45 mm |
+  | Compacto | 130 px | 32 mm |
   | Assinatura | 120 px | 30 mm |
   | Vertical | 100 px | 25 mm |
   | Emblema | 64 px | 15 mm |
@@ -100,11 +117,11 @@ No logo e no selo, o nome já está em curvas. Não redigite o logo com a fonte.
 ## Pontos de atenção
 
 - **Vocabulário comum:** cão + gato é comum no setor pet. O que diferencia a marca é a coleira, a plaquinha e a rota; mantenha os três juntos.
-- **Avião:** o briefing pedia para evitar o avião clichê. Aqui ele é pequeno, no fim da rota, e não aparece nas versões reduzidas. Se preferir, a rota pode terminar num ponto de destino (a geometria já prevê essa opção: `end="dot"` em `fonte-vetorial/emb.py`).
+- **Avião:** o briefing pedia para evitar o avião clichê. Aqui ele é pequeno, cortado na alça, e não aparece nas versões reduzidas. Se preferir, a rota pode terminar sem o avião (`plane_mode=None` em `fonte-vetorial/emb2.py`).
 
 ## Processo e status
 
-- **Direções anteriores:** Elo (r0 a r2) e Dobra foram substituídas por esta. As versões continuam no histórico do git (commits `58f7e5a`, `d6bf88c`, `07f2724` e `4c8654e`). O código de todas elas está em [`fonte-vetorial/`](fonte-vetorial) e regera cada uma em `historico/`, sem tocar em `final/`.
+- **Versões anteriores:** Elo (r0 a r2), Dobra e a rodada 1 desta direção estão na pasta [`../work/`](../work), com todas as variações, e no histórico do git. O código de todas elas está em [`fonte-vetorial/`](fonte-vetorial) e regera cada uma em `historico/`, sem tocar em `final/`.
 - **Estudos:**
   - As direções A, B e C (r0) estão em [`exploracao/`](exploracao).
   - Os estudos Janela e Retrato estão em [`exploracao/rodada-3/`](exploracao/rodada-3).

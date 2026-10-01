@@ -16,12 +16,13 @@ Para ver tudo de uma vez, abra a [`visao-geral.png`](visao-geral.png) (também e
 | `04-elo-r2/` | Elo r2: o & desenhado como coleira (fivela, argola, plaquinha) | Substituída pela Dobra | 230 |
 | `05-estudos-janela-e-retrato/` | Estudos da rodada 3: o pet na janela do avião e a foto do pet no passaporte | Não seguidos | 8 |
 | `06-dobra/` | Dobra: cão de origami feito da página do passaporte (com gato e coelho) | Substituída pela direção E | 200 |
-| `07-companheiros-de-viagem-atual/` | Direção atual: coleira com plaquinha, cão e gato, rota de voo e o selo com o nome na alça | **Atual** | 182 |
+| `07-companheiros-de-viagem-r1/` | Companheiros de viagem, rodada 1: coleira com a plaquinha pendurada abaixo, cão e gato, rota de voo e o selo com o nome na alça | Substituída pela r2 | 182 |
+| `08-companheiros-de-viagem-r2-atual/` | Direção atual, rodada 2: plaquinha presa na coleira, avião cortando a alça, pets maiores e o novo logo compacto | **Atual** | 200 |
 | `apresentacoes/` | A apresentação de cada rodada, em HTML, PDF e PNG | Registro | 15 |
 
 ## Como os arquivos estão organizados
 
-Dentro de cada kit (pastas 02, 03, 04, 06 e 07):
+Dentro de cada kit (pastas 02, 03, 04, 06, 07 e 08):
 
 - `svg/`: vetor, com o nome em curvas e fundo transparente. Use para editar ou para a gráfica.
 - `pdf/`: vetor para impressão, sem imagem embutida.
@@ -45,7 +46,7 @@ As pastas de estudo têm menos versões, só em SVG e PNG: a 01 em `_cor`, `_neg
 
 ## De onde veio cada pasta
 
-Tudo foi copiado do histórico do repositório, sem nenhuma alteração. A pasta `07-companheiros-de-viagem-atual/` é idêntica a `identidade-visual/final/`.
+As pastas 01 a 07 foram copiadas do histórico do repositório, sem nenhuma alteração. A pasta `08-companheiros-de-viagem-r2-atual/` é a rodada atual, idêntica a `identidade-visual/final/`.
 
 | Pasta | Commit de origem |
 | --- | --- |
@@ -54,6 +55,7 @@ Tudo foi copiado do histórico do repositório, sem nenhuma alteração. A pasta
 | 04 | `07f2724` |
 | 05, 06 | `4c8654e` |
 | 07 | `dd2dee0` |
+| 08 | rodada 2, no mesmo commit desta pasta |
 
 Os estudos gerados por IA na primeira rodada ficaram no projeto do Higgsfield “Coleira & Passaporte — Identidade Visual”. Eles não estão aqui porque as imagens não puderam ser baixadas. De qualquer forma, nenhum logo final veio dessas imagens.
 
