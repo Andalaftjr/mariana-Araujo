@@ -26,7 +26,7 @@ com versões em PNG e PDF na mesma pasta.
 - **Quase redondo:** a plaquinha subiu para a borda da coleira, então o emblema cabe num círculo (avatar, adesivo, bordado).
 - **A viagem sai da moldura:** o avião agora cruza a alça, recortado do couro.
 - **Pets maiores:** no mesmo tamanho de emblema, cão e gato ficam 13% maiores.
-- **Logo compacto:** nova assinatura com o nome em duas linhas, “Coleira &” / “Passaporte”, com metade da largura do horizontal.
+- **Logo compacto:** nova assinatura com o nome em duas linhas, “Coleira &” / “Passaporte”, 36% mais estreita que o horizontal na mesma altura.
 
 ### Na disputa com Imigrapet e Tripulapet
 
