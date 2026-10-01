@@ -1,122 +1,118 @@
 # Coleira & Passaporte · identidade visual
 
-Direção C · Elo · revisão r2 · 30/09/2026 · consultoria em Pet Travel
+Direção E · Companheiros de viagem · 30/09/2026 · consultoria em Pet Travel
 
-A apresentação completa (evolução, construção, sistema, testes e regras) está em
+A apresentação completa (conceito, construção, sistema, testes e regras) está em
 [`apresentacao/coleira-passaporte-identidade.html`](apresentacao/coleira-passaporte-identidade.html),
 com versões em PNG e PDF na mesma pasta.
 
-![Logo principal](final/png/cp-logo-principal_cor.png)
+![Selo](final/png/cp-selo_cor.png)
 
-## O símbolo: o & é uma coleira
+![Logo horizontal](final/png/cp-logo-horizontal_cor.png)
 
-O “&” do nome é desenhado como uma coleira de pet. Qualquer tutor reconhece os detalhes:
+## O conceito: o nome, desenhado
 
-1. **Laço = a coleira.** Círculo de raio 17 no grid de 100.
-2. **Fivela** na lateral do laço, com a tira passando por dentro.
-3. **Argola e plaquinha:** a plaquinha terracota pende de uma argola presa ao laço.
-4. **Nó de cima:** a diagonal passa por cima (vem da r1).
-5. **Bojo:** círculo de raio 21.
-6. **Nó de baixo:** o braço passa por cima. Com essa alternância, vira um nó de verdade.
-7. **Ponta da tira:** a cauda do &, arredondada e com três furos.
+- **Coleira:** é a moldura do emblema, com alça costurada, três furos de regulagem e argola.
+- **Passaporte:** é a plaquinha de identificação pendurada na argola. É o documento do pet: microchip, vacinas, certificados.
+- **Companheiros:** um cão e um gato juntos, olhando para a frente, para onde vão. A marca atende as duas espécies.
+- **Viagem:** uma rota de voo tracejada cruza o céu da coleira e termina num avião pequeno.
 
-### Evolução
+**Selo:** o nome vai escrito na própria alça, como numa coleira personalizada: “Coleira & Passaporte” no alto e “Consultoria em Pet Travel” embaixo.
 
-- **r0 (esboço):** & monolinha com um ponto terracota.
-- **r1 (nó):** traço mais grosso, entrelaçado nos cruzamentos, e Plus Jakarta Sans no nome.
-- **r2 (coleira):** fivela, argola com plaquinha pendurada no laço e ponta furada. Os elementos de apoio são novos: a faixa-coleira e as plaquinhas numeradas.
-
-As versões anteriores estão no histórico do git (commits `58f7e5a` e `d6bf88c`). As direções A, B e C (r0) estão em [`exploracao/`](exploracao).
-
-### Três níveis de detalhe (o mesmo desenho)
-
-| Nível | Quando usar | O que tem |
-| --- | --- | --- |
-| Completo (`cp-simbolo`) | a partir de 64 px e 20 mm | tudo, incluindo os respiros do nó |
-| Médio (`cp-simbolo-medio`) | de 32 a 64 px, avatar e dentro do nome | fivela, argola, plaquinha e furos, sem os respiros do nó |
-| Reduzido (`cp-simbolo-reduzido`) | até 32 px, favicon e bordado até 25 mm | laço, argola e plaquinha |
+**Tom:** o que separa a marca de um pet shop é a paleta sóbria, a serifada editorial e o desenho plano.
 
 ## Arquivos (`final/`)
 
 | Peça | Arquivo base | Uso |
 | --- | --- | --- |
-| Logo principal | `cp-logo-principal` | Nome com o & coleira em destaque + descritor. Uso preferencial (a partir de 300 px) |
-| Horizontal com selo | `cp-logo-horizontal-selo` | Símbolo + nome completo: site, cabeçalhos, documentos |
-| Assinatura | `cp-logo-assinatura` | Nome em uma linha, sem descritor |
-| Assinatura reduzida | `cp-logo-assinatura-reduzida` | Nome com o & reduzido, para menos de 300 px |
-| Vertical | `cp-logo-vertical` | Selo sobre o nome |
-| Empilhada | `cp-logo-empilhado` | Coleira / & / Passaporte |
-| Símbolo completo | `cp-simbolo` | Grandes formatos, fachada, embalagem, carimbo seco |
-| Símbolo médio | `cp-simbolo-medio` | 32 a 64 px |
-| Símbolo reduzido | `cp-simbolo-reduzido` | Até 32 px e bordado pequeno |
-| Selo | `cp-selo` | & no círculo; é a assinatura reduzida |
+| Selo | `cp-selo` | O nome escrito na coleira. Assinatura principal: redes, adesivo, embalagem, carimbo, bordado |
+| Horizontal | `cp-logo-horizontal` | Emblema + nome + descritor: site, documentos, apresentações |
+| Assinatura | `cp-logo-assinatura` | Emblema simplificado + nome, sem descritor: menu, rodapé, e-mail |
+| Vertical | `cp-logo-vertical` | Emblema sobre o nome |
+| Nome | `cp-logo-nome` | Só o logotipo, quando o emblema já está na peça |
+| Emblema | `cp-emblema` | Coleira, pets e rota, sem o nome (a partir de 64 px) |
+| Emblema simplificado | `cp-emblema-simplificado` | Sem costura, furos, rota e olhos (32 a 96 px) |
+| Ícone | `cp-icone` | Os dois pets num disco (até 32 px e favicon) |
 
-Cada peça vem em seis versões (`_cor`, `_negativo`, `_preto`, `_branco`, `_cinza` e `_uma-cor`) e em três formatos:
+Cada peça vem em seis versões (`_cor`, `_negativo`, `_preto`, `_branco`, `_cinza`, `_uma-cor`) e em três formatos:
 
 - `svg/`: vetor, com o nome em curvas e fundo transparente.
 - `pdf/`: vetor para gráfica, sem imagem embutida.
 - `png/`: fundo transparente, de 1000 a 3000 px.
 
-Além disso:
+Nas versões de uma cor, o nome do selo fica vazado na alça, e o cão do ícone é recortado do disco.
 
-- `elementos/`: faixa-coleira (curta e longa) e plaquinha, em cor, negativo, preto e branco.
-- `avatar/`: quadrados com fundo (azul e linho), com o símbolo médio, em SVG e em PNG de 1080 e 640 px.
-- `favicon/`: `favicon.svg`, `favicon.ico` e PNG de 16, 32, 48, 180, 192 e 512 px, feitos com a versão reduzida.
+Pastas complementares:
+
+- `elementos/`: a rota de voo e a plaquinha, para compor peças.
+- `avatar/`: quadrados com fundo, em azul e em linho, em SVG e em PNG de 1080 e 640 px. A coleira fica dentro do recorte circular.
+- `favicon/`: `favicon.svg`, `favicon.ico` e PNG de 16, 32, 48, 180, 192 e 512 px.
 
 ## Paleta
 
 | Cor | HEX | RGB | CMYK* | Papel |
 | --- | --- | --- | --- | --- |
-| Azul Passaporte | `#1B2B44` | 27, 43, 68 | 60 / 37 / 0 / 73 | Cor institucional: confiança, documentação, experiência internacional |
-| Terracota Tag | `#C8694A` | 200, 105, 74 | 0 / 48 / 63 / 22 | Só na tag do &: calor, cuidado. Usar com parcimônia |
-| Linho | `#F4EFE6` | 244, 239, 230 | 0 / 2 / 6 / 4 | Fundo principal; evita o branco clínico |
+| Azul Passaporte | `#1B2B44` | 27, 43, 68 | 60 / 37 / 0 / 73 | Cor institucional: a coleira, o cão e o nome |
+| Terracota | `#C8694A` | 200, 105, 74 | 0 / 48 / 63 / 22 | O gato, a plaquinha, a rota e o “&” |
+| Linho | `#F4EFE6` | 244, 239, 230 | 0 / 2 / 6 / 4 | Fundo principal e o nome escrito no selo |
 | Céu de Cabine | `#A9BCCB` | 169, 188, 203 | 17 / 7 / 0 / 20 | Apoio: tranquilidade e mobilidade |
-| Tinta | `#111A2B` | 17, 26, 43 | 60 / 40 / 0 / 83 | Texto corrido e versão escura profunda |
+| Tinta | `#111A2B` | 17, 26, 43 | 60 / 40 / 0 / 83 | Texto corrido e fundo escuro profundo |
 
-\* O CMYK vem de uma conversão matemática, sem perfil ICC. Confirme com prova de impressão no perfil da gráfica (ex.: ISO Coated v2 / FOGRA39) e escolha o Pantone no guia físico.
-
-Contrastes:
-
-- Azul sobre Linho: 12,4:1.
-- Terracota sobre Linho: 3,3:1.
-- Terracota sobre Azul: 3,8:1. Use só em elementos gráficos e títulos grandes, nunca em texto pequeno.
+\* O CMYK vem de conversão matemática, sem perfil ICC. Confirme com prova de impressão no perfil da gráfica (ex.: ISO Coated v2 / FOGRA39) e escolha o Pantone no guia físico.
 
 ## Tipografia
 
-- **Plus Jakarta Sans** (Google Fonts, SIL OFL): nome, títulos e texto.
-  - Bold 700 no nome.
-  - SemiBold 600 nos títulos e no descritor (caixa alta, +220 de espaçamento).
-  - Regular 400 no texto.
-- **IBM Plex Mono** (Google Fonts, SIL OFL): dados como datas, códigos de voo, referências e checklists.
+- **Fraunces SemiBold** (Google Fonts, SIL OFL): nome e títulos. É uma serifada de desenho suave, que dá o tom de consultoria cuidadosa e equilibra a ilustração dos pets. No logo e no selo, o “&” fica em terracota.
+- **Plus Jakarta Sans** (Google Fonts, SIL OFL): texto corrido, botões e descritor. No descritor, SemiBold 600 em caixa alta, com +220 de espaçamento.
+- **IBM Plex Mono** (Google Fonts, SIL OFL): datas, códigos de voo e referências.
 
-No logo, o nome já está em curvas e o “&” é o desenho próprio da marca, não o da fonte. Não redigite o logo.
+No logo e no selo, o nome já está em curvas. Não redigite o logo com a fonte.
 
 ## Regras básicas
 
-- Área de proteção: x = altura da letra “C” do nome, em todos os lados.
-- Tamanho mínimo:
+- **Área de proteção:** x = altura da letra “C” do nome, em todos os lados. No selo, x = largura da alça.
+- **Qual peça usar:**
+  - Selo: redes, adesivos, embalagens e carimbo.
+  - Horizontal: site, documentos e apresentações.
+  - Assinatura: menu, rodapé e e-mail.
+- **Nível de detalhe:** abaixo de 64 px, use o emblema simplificado; abaixo de 32 px, o ícone.
+- **Tamanho mínimo:**
 
   | Peça | Tela | Impressão |
   | --- | --- | --- |
-  | Logo principal / horizontal com selo | 300 px | 60 mm |
-  | Assinatura reduzida | 110 px | 30 mm |
-  | Vertical / empilhada | 160 px | 40 mm |
-  | Símbolo completo / selo | 64 px | 20 mm |
-  | Símbolo médio | 32 px | 10 mm |
-  | Símbolo reduzido | 16 px | 5 mm (bordado até 25 mm) |
+  | Selo | 140 px | 30 mm |
+  | Horizontal | 180 px | 45 mm |
+  | Assinatura | 120 px | 30 mm |
+  | Vertical | 100 px | 25 mm |
+  | Emblema | 64 px | 15 mm |
+  | Emblema simplificado | 32 px | 8 mm (bordado: 12 mm) |
+  | Ícone | 16 px | 5 mm |
 
-- Escolha o nível de detalhe pelo tamanho. Não use o símbolo completo abaixo de 64 px.
-- A terracota fica na plaquinha e nas plaquinhas de apoio. Não troque a plaquinha por patinha, osso ou coração: a coleira já diz “pet”.
-- Com o nome ao lado, use o **selo**. O & livre colado ao nome seria lido como “& Coleira & Passaporte”.
-- Nunca escreva “Coleira e Passaporte”, “Coleira + Passaporte” ou outra variação, nem monte o logo com o & da fonte.
-- Não distorça, não gire, não troque cores e não aplique sombra, degradê, contorno ou 3D.
-- Sobre fotografia, use a versão negativa numa área escura e calma. Se a foto for clara ou movimentada, use uma faixa sólida de Azul Passaporte.
+- **Terracota:** fica no gato, na plaquinha, na rota e no “&”. Não é cor de texto corrido.
+- **Rota tracejada:** use como elemento de apoio para ligar informações, como origem e destino.
+- **Nome:** nunca escreva “Coleira e Passaporte”, “Coleira + Passaporte” ou outra variação, nem reescreva o texto do selo.
+- **Enfeites:** não acrescente patinha, osso ou coração ao emblema.
+- **Efeitos:** não distorça, não gire, não troque cores e não aplique sombra, degradê, contorno ou 3D.
+- **Sobre fotografia:**
+  - Em foto movimentada, ponha o logo em versão negativa numa faixa sólida de Azul Passaporte.
+  - Numa área escura e calma da foto, a versão negativa pode ir direto, com o “&” em linho.
+
+## Pontos de atenção
+
+- **Vocabulário comum:** cão + gato é comum no setor pet. O que diferencia a marca é a coleira, a plaquinha e a rota; mantenha os três juntos.
+- **Avião:** o briefing pedia para evitar o avião clichê. Aqui ele é pequeno, no fim da rota, e não aparece nas versões reduzidas. Se preferir, a rota pode terminar num ponto de destino (a geometria já prevê essa opção: `end="dot"` em `fonte-vetorial/emb.py`).
 
 ## Processo e status
 
-- **Estudos no Higgsfield (r0):** três estudos com Nano Banana 2, no projeto “Coleira & Passaporte — Identidade Visual”. A rede do ambiente bloqueou o servidor de imagens, então não consegui vê-los. Na r1 e na r2 não houve geração por IA: os créditos estavam zerados, e a evolução foi desenhada direto em vetor.
-- **Vetores:** construídos geometricamente em código, sem rastreamento de imagem de IA (ver [`fonte-vetorial/`](fonte-vetorial)). O nome está em curvas a partir da fonte, com a grafia exata “Coleira & Passaporte”.
-- **Revisão recomendada antes do registro:** ajuste fino de espaçamento entre letras, fivela e furos para bordado e gravação, e prova de cor impressa.
+- **Direções anteriores:** Elo (r0 a r2) e Dobra foram substituídas por esta. As versões continuam no histórico do git (commits `58f7e5a`, `d6bf88c`, `07f2724` e `4c8654e`). O código de todas elas está em [`fonte-vetorial/`](fonte-vetorial) e regera cada uma em `historico/`, sem tocar em `final/`.
+- **Estudos:**
+  - As direções A, B e C (r0) estão em [`exploracao/`](exploracao).
+  - Os estudos Janela e Retrato estão em [`exploracao/rodada-3/`](exploracao/rodada-3).
+- **Sem IA nesta rodada:** tudo foi desenhado direto em vetor, porque os créditos do Higgsfield estavam zerados.
+- **Vetores:** construídos em código, sem rastreamento de imagem de IA.
+  - Os pets são curvas desenhadas à mão no código.
+  - O nome está em curvas a partir da fonte, com a grafia exata “Coleira & Passaporte”, inclusive no arco do selo.
+- **Revisão recomendada antes do registro:** desenho fino dos pets, espaçamento do nome e prova de cor impressa.
 
 ## Antes de usar comercialmente
 
